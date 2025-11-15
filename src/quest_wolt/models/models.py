@@ -52,3 +52,7 @@ class UpdatePreferencesRequest(BaseModel):
 class UpdateQuestRequest(BaseModel):
     step_id: Optional[int] = None
     status: Optional[str] = None  # e.g. "completed"
+
+class RecommendedDish(BaseModel):
+    dish: Dish
+    score: float
