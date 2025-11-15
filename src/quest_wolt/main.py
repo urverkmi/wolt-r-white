@@ -1,9 +1,20 @@
 from fastapi import FastAPI, HTTPException, Query
 from .models.models import *
 from .data.placeholder import INGREDIENTS, USERS, DISHES, RESTAURANTS, QUESTS
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 app = FastAPI(title="FoodQuest Demo API")
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # Allow all origins for development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # ---------
