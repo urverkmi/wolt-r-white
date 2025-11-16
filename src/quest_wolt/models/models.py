@@ -18,6 +18,7 @@ class Restaurant(BaseModel):
     name: str
     lat: float
     lon: float
+    type: str
 
 class UserPreference(BaseModel):
     ingredient_id: int
@@ -52,3 +53,7 @@ class UpdatePreferencesRequest(BaseModel):
 class UpdateQuestRequest(BaseModel):
     step_id: Optional[int] = None
     status: Optional[str] = None  # e.g. "completed"
+
+class RecommendedDish(BaseModel):
+    dish: Dish
+    score: float
