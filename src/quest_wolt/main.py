@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Query, Body
 from .models.models import *
 from .data.placeholder import INGREDIENTS, USERS, DISHES, RESTAURANTS, QUESTS
+
 from .prediction_and_scoring.recommender import Recommender
 from pathlib import Path
 import json
@@ -8,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="FoodQuest Demo API")
+
 
 app.add_middleware(
     CORSMiddleware,
