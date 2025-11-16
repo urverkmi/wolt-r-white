@@ -4,9 +4,18 @@ from .data.placeholder import INGREDIENTS, USERS, DISHES, RESTAURANTS, QUESTS
 from .prediction_and_scoring.recommender import Recommender
 from pathlib import Path
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="FoodQuest Demo API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # Allow all origins for development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 MODEL_DIR = Path(__file__).resolve().parent / "models" / "ai_models"
 AI_RECOMMENDER = Recommender(MODEL_DIR)
@@ -74,6 +83,7 @@ def score_dish_for_user(dish: Dish, user_id: int) -> float:
     for ing_id in dish.ingredient_ids:
         score += prefs.get(ing_id, 0.0)
     return score
+    
 def score_dish_for_user_ai(dish: Dish, user_id: int) -> float:
     """
     Score a single dish for a given user using the AI Recommender,
@@ -283,7 +293,7 @@ def get_recommendations(
     # For demo: consider all dishes, score them, sort.
     scores: List[RecommendedDish] = []
     for dish in DISHES.values():
-        s = score_dish_for_user(dish, user_id)
+        s = score_dish_for_user_ai(dish, user_id)
         scores.append(RecommendedDish(dish=dish, score=s))
 
     # Sort descending by score

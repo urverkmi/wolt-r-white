@@ -18,6 +18,7 @@ class Restaurant(BaseModel):
     name: str
     lat: float
     lon: float
+    type: str
 
 class UserPreference(BaseModel):
     ingredient_id: int

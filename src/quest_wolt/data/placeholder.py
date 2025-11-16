@@ -30,6 +30,11 @@ INGREDIENTS: Dict[int, Ingredient] = {
     22: Ingredient(id=22, name="lemon"),
     23: Ingredient(id=23, name="cilantro"),
     24: Ingredient(id=24, name="sesame"),
+    24: Ingredient(id=25, name="strawberry"),
+    24: Ingredient(id=26, name="coffee"),
+    24: Ingredient(id=27, name="cream"),
+    24: Ingredient(id=28, name="milk"),
+    24: Ingredient(id=29, name="chocolate"),
 }
 
 # -----------------
@@ -37,16 +42,16 @@ INGREDIENTS: Dict[int, Ingredient] = {
 # -----------------
 
 RESTAURANTS: Dict[int, Restaurant] = {
-    1: Restaurant(id=1, name="Mama's Kitchen", lat=60.1699, lon=24.9384),
-    2: Restaurant(id=2, name="Spice Route", lat=60.1705, lon=24.9410),
-    3: Restaurant(id=3, name="Nordic Bites", lat=60.1712, lon=24.9450),
-    4: Restaurant(id=4, name="Tokyo Noodle Bar", lat=60.1685, lon=24.9340),
-    5: Restaurant(id=5, name="La Piazza", lat=60.1678, lon=24.9425),
-    6: Restaurant(id=6, name="Green Garden Vegan", lat=60.1720, lon=24.9390),
-    7: Restaurant(id=7, name="Burger Hub", lat=60.1690, lon=24.9445),
-    8: Restaurant(id=8, name="Taco Loco", lat=60.1730, lon=24.9370),
-    9: Restaurant(id=9, name="Sea Breeze Sushi", lat=60.1702, lon=24.9475),
-    10: Restaurant(id=10, name="Curry House Helsinki", lat=60.1688, lon=24.9488),
+    1: Restaurant(id=1, name="Mama's Kitchen", lat=60.1699, lon=24.9384, type='restaurant'),
+    2: Restaurant(id=2, name="Starbucks", lat=60.1705, lon=24.9410, type='starbucks'),
+    3: Restaurant(id=3, name="Lola's Cafe", lat=60.1712, lon=24.9450, type='cafe'),
+    4: Restaurant(id=4, name="Tokyo Noodle Bar", lat=60.1685, lon=24.9340, type='restaurant'),
+    5: Restaurant(id=5, name="La Piazza", lat=60.1678, lon=24.9425, type='restaurant'),
+    6: Restaurant(id=6, name="Cafe Mich", lat=60.1720, lon=24.9390, type='cafe'),
+    7: Restaurant(id=7, name="Burger Hub", lat=60.1690, lon=24.9445, type='burger'),
+    8: Restaurant(id=8, name="Taco Loco", lat=60.1730, lon=24.9370, type='restaurant'),
+    9: Restaurant(id=9, name="Sea Breeze Sushi", lat=60.1702, lon=24.9475, type='restaurant'),
+    10: Restaurant(id=10, name="Curry House Helsinki", lat=60.1688, lon=24.9488, type='restaurant'),
 }
 
 # -----------------
@@ -64,13 +69,13 @@ DISHES: Dict[int, Dish] = {
         description="Grilled chicken with garlic, onions and steamed rice.",
         ingredient_ids=[1, 2, 3, 4],
     ),
-    2: Dish(
-        id=2,
-        restaurant_id=1,
-        name="Cheesy Onion Soup",
-        description="Slow-cooked onion soup topped with melted cheese.",
-        ingredient_ids=[1, 5, 9],
-    ),
+    # 2: Dish(
+    #     id=2,
+    #     restaurant_id=1,
+    #     name="Cheesy Onion Soup",
+    #     description="Slow-cooked onion soup topped with melted cheese.",
+    #     ingredient_ids=[1, 5, 9],
+    # ),
     3: Dish(
         id=3,
         restaurant_id=1,
@@ -83,22 +88,22 @@ DISHES: Dict[int, Dish] = {
     4: Dish(
         id=4,
         restaurant_id=2,
-        name="Spicy Garlic Noodles",
-        description="Wok-fried noodles with garlic and chili oil.",
+        name="Strawberry Frappuccino",
+        description="Blended ice drink with strawberry and cream",
         ingredient_ids=[2, 8, 11],
     ),
     5: Dish(
         id=5,
         restaurant_id=2,
-        name="Chili Beef Stir Fry",
-        description="Beef strips with chili, onion and garlic.",
+        name="Cappuccino",
+        description="Foamy coffee with milk",
         ingredient_ids=[12, 8, 1, 2],
     ),
     6: Dish(
         id=6,
         restaurant_id=2,
-        name="Cilantro Lemon Chicken",
-        description="Grilled chicken with fresh cilantro and lemon.",
+        name="Pain Au Chocolat",
+        description="Flaky pastry with chocolate",
         ingredient_ids=[3, 22, 23],
     ),
 
@@ -209,13 +214,13 @@ DISHES: Dict[int, Dish] = {
         description="Beef burger with bacon, mushrooms and cheese.",
         ingredient_ids=[12, 19, 10, 5],
     ),
-    21: Dish(
-        id=21,
-        restaurant_id=7,
-        name="Garlic Fries",
-        description="Crispy fries tossed with garlic and herbs.",
-        ingredient_ids=[17, 2, 7],
-    ),
+    # 21: Dish(
+    #     id=21,
+    #     restaurant_id=7,
+    #     name="Garlic Fries",
+    #     description="Crispy fries tossed with garlic and herbs.",
+    #     ingredient_ids=[17, 2, 7],
+    # ),
 
     # Taco Loco (8)
     22: Dish(
@@ -225,13 +230,13 @@ DISHES: Dict[int, Dish] = {
         description="Soft tacos with beef, onion, cilantro and chili salsa.",
         ingredient_ids=[12, 1, 23, 8],
     ),
-    23: Dish(
-        id=23,
-        restaurant_id=8,
-        name="Chicken Tacos",
-        description="Chicken tacos with lettuce and tomato salsa.",
-        ingredient_ids=[3, 18, 6, 23],
-    ),
+    # 23: Dish(
+    #     id=23,
+    #     restaurant_id=8,
+    #     name="Chicken Tacos",
+    #     description="Chicken tacos with lettuce and tomato salsa.",
+    #     ingredient_ids=[3, 18, 6, 23],
+    # ),
     24: Dish(
         id=24,
         restaurant_id=8,

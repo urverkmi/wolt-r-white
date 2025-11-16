@@ -46,8 +46,8 @@ class Recommender:
 
     def _get_user_pref_vector(
         self,
-        user_id: str | None = None,
-        new_user_prefs: dict[str, float] | None = None,
+        user_id,
+        new_user_prefs,
     ) -> np.ndarray:
         """
         Builds a dense preference vector for a user.
@@ -74,8 +74,8 @@ class Recommender:
     def recommend(
         self,
         dishes: list[dict],
-        user_id: str | None = None,
-        new_user_prefs: dict[str, float] | None = None,
+        user_id,
+        new_user_prefs,
     ):
         """
         Ranks a list of dishes for a user.
